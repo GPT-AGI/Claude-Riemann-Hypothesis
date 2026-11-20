@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0e1a33"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bg)"/>
+
+  <!-- regions: left half-plane / critical strip / right half-plane -->
+  <rect x="70" y="36" width="408.3" height="424" fill="#ffffff" opacity="0.02"/>
+  <rect x="478.3" y="36" width="85" height="424" fill="#3b82f6" opacity="0.13"/>
+  <rect x="563.3" y="36" width="76.7" height="424" fill="#ffffff" opacity="0.02"/>
+
+  <text x="274" y="66" text-anchor="middle" font-size="14" fill="#64748b">Re(s) &lt; 0 — only trivial zeros</text>
+  <text transform="rotate(-90 466 250)" x="466" y="250" text-anchor="middle" font-size="13" fill="#7dd3fc">critical strip  0 &lt; Re(s) &lt; 1</text>
+  <text transform="rotate(-90 612 250)" x="612" y="250" text-anchor="middle" font-size="13" fill="#64748b">no zeros (Euler product)</text>
+
+  <!-- axes -->
+  <line x1="70" y1="460" x2="646" y2="460" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="478.3" y1="460" x2="478.3" y2="30" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="656" y="465" font-size="14" fill="#94a3b8">Re(s)</text>
+  <text x="478.3" y="22" text-anchor="middle" font-size="14" fill="#94a3b8">Im(s)</text>
+
+  <!-- ticks -->
+  <line x1="478.3" y1="460" x2="478.3" y2="467" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="478.3" y="482" text-anchor="middle" font-size="13" fill="#94a3b8">0</text>
+  <text x="520.8" y="482" text-anchor="middle" font-size="13" fill="#7dd3fc">½</text>
+  <text x="563.3" y="482" text-anchor="middle" font-size="13" fill="#94a3b8">1</text>
+  <text x="308.2" y="482" text-anchor="middle" font-size="13" fill="#94a3b8">−2</text>
+  <text x="138" y="482" text-anchor="middle" font-size="13" fill="#94a3b8">−4</text>
+
+  <!-- critical line and the first ten non-trivial zeros -->
+  <g filter="url(#glow)">
+    <line x1="520.8" y1="460" x2="520.8" y2="40" stroke="#22d3ee" stroke-width="3"/>
+    <circle cx="520.8" cy="345.9" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="290.2" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="258.0" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="214.3" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="193.9" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="161.1" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="129.5" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="110.0" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="72.2" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+    <circle cx="520.8" cy="58.0" r="6.5" fill="#22d3ee" stroke="#e0f2fe" stroke-width="1.5"/>
+  </g>
+  <text x="532" y="52" font-size="15" font-weight="600" fill="#22d3ee">Re(s) = ½</text>
+
+  <!-- trivial zeros and the pole -->
+  <rect x="301.7" y="453.5" width="13" height="13" fill="#0b1220" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="131.5" y="453.5" width="13" height="13" fill="#0b1220" stroke="#f59e0b" stroke-width="2"/>
+  <text x="223" y="443" text-anchor="middle" font-size="13" fill="#fbbf24">trivial zeros</text>
+  <g stroke="#f87171" stroke-width="3">
+    <line x1="557" y1="454" x2="569.6" y2="466"/>
+    <line x1="557" y1="466" x2="569.6" y2="454"/>
+  </g>
+  <text x="576" y="450" font-size="13" fill="#f87171">pole s = 1</text>
+
+  <!-- right panel -->
+  <text x="800" y="66" text-anchor="middle" font-size="13" letter-spacing="3" fill="#64748b">THE THEOREM</text>
+  <line x1="672" y1="80" x2="930" y2="80" stroke="#334155"/>
+  <text x="800" y="122" text-anchor="middle" font-size="30" font-weight="700" fill="#e2e8f0">ζ(s) = 0</text>
+  <text x="800" y="152" text-anchor="middle" font-size="16" fill="#94a3b8">s ≠ 1,  s ∉ {−2, −4, …}</text>
+  <text x="800" y="200" text-anchor="middle" font-size="34" fill="#22d3ee">⟹</text>
+  <text x="800" y="246" text-anchor="middle" font-size="30" font-weight="700" fill="#22d3ee">Re(s) = ½</text>
+  <line x1="672" y1="284" x2="930" y2="284" stroke="#334155"/>
+  <text x="800" y="318" text-anchor="middle" font-size="17" fill="#e2e8f0">17,374,215 lines of Lean 4</text>
+  <text x="800" y="346" text-anchor="middle" font-size="14" fill="#94a3b8">175,187 files · 0 sorry · 0 custom axioms</text>
+  <text x="800" y="372" text-anchor="middle" font-size="13" font-style="italic" fill="#94a3b8">the statement itself comes from Mathlib</text>
+  <text x="800" y="416" text-anchor="middle" font-size="15" font-weight="700" fill="#fbbf24">Formalized by Levent Alpöge (with Claude)</text>
+  <text x="800" y="438" text-anchor="middle" font-size="12" fill="#64748b">announced 2026-11-20 · alpo.ge</text>
+
+  <!-- bottom captions -->
+  <text x="355" y="516" text-anchor="middle" font-size="15" font-style="italic" fill="#cbd5e1">The Riemann Hypothesis — now a machine-checked theorem</text>
+  <text x="800" y="516" text-anchor="middle" font-size="12" fill="#64748b">open-source backup: github.com/GPT-AGI/Riemann-Hypothesis-Lean</text>
+</svg>
